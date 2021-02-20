@@ -2,6 +2,23 @@
 # You don't need to edit this file, it's empty on purpose.
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
-author_profile: true
+layout: splash
+header:
+    overlay_color: "#9C9C9C" #
+    overlay_image: /assets/images/17520.jpg
+    overlay_filter: 0.5
+    caption:
+excerpt: "Thanks for stopping by. <br />This blog's a work in progress and is under rapid development, so <br />please keep in mind it might change at any time." 
+feature_row:
+  - image_path: /assets/images/17520.jpg
+    title: "Content 1"
+    excerpt: "Some excerpt for Content 1"
+  - image_path: /assets/images/19609.jpg
+    title: "Content 2"
+    excerpt: "Some excerpt for Content 2"
+  - image_path: /assets/images/39610.jpg
+    title: "Content 3"
+    excerpt: "Some excerpt for Content 3"
 ---
+
+{% include feature_row %}
