@@ -13,10 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Axel Sparkster's Development Blog
+title: Axel's Development Blog
 email: axelsparkster@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Bio will eventually go here
+  Software engineer, graphic designer and artist in his 20s with a love
+  for culture, languages, video games and learning how things work.
 twitter_username: AxelSparkster
 github_username: AxelSparkster
 minimal_mistakes_skin: contrast
@@ -29,7 +30,7 @@ remote_theme: mmistakes/minimal-mistakes
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: America/Chicago
 
 include:
   - _pages
@@ -58,7 +59,7 @@ plugins:
 author:
   name   : "Axel Sparkster"
   avatar : "/assets/images/bio-photo.png"
-  bio    : "Bio will eventually go here"
+  bio    : "Software engineer, graphic designer and artist in his 20s with a love for culture, languages, video games and learning how things work."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -105,3 +106,5 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+theme: jekyll-theme-cayman
