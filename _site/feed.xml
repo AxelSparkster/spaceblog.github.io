@@ -1,1 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-02-21T14:09:20-06:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Axel’s Development Blog</title><subtitle>Software engineer, graphic designer and artist in his 20s with a love for culture, languages, video games and learning how things work.</subtitle><author><name>Axel Sparkster</name></author><entry><title type="html">New Test Post</title><link href="http://localhost:4000/test/new-test-post/" rel="alternate" type="text/html" title="New Test Post" /><published>2021-02-20T00:12:00-06:00</published><updated>2021-02-20T00:12:00-06:00</updated><id>http://localhost:4000/test/new-test-post</id><content type="html" xml:base="http://localhost:4000/test/new-test-post/">&lt;p&gt;Nothing too interesting here. Just a test post.&lt;/p&gt;</content><author><name>Axel Sparkster</name></author><category term="test" /><category term="test" /><summary type="html">Nothing too interesting here. Just a test post.</summary></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-02-22T15:42:45-06:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Axel’s Development Blog</title><subtitle>Software engineer, graphic designer and artist in his 20s with a love for culture, languages, video games and learning how things work.</subtitle><author><name>Axel Sparkster</name></author><entry><title type="html">Adding an Apex Domain and Custom Subdomain on Github Pages</title><link href="http://localhost:4000/managing-apex-domains-and-subdomains-on-github-pages/" rel="alternate" type="text/html" title="Adding an Apex Domain and Custom Subdomain on Github Pages" /><published>2021-02-22T13:29:00-06:00</published><updated>2021-02-22T13:29:00-06:00</updated><id>http://localhost:4000/managing-apex-domains-and-subdomains-on-github-pages</id><content type="html" xml:base="http://localhost:4000/managing-apex-domains-and-subdomains-on-github-pages/">&lt;h1 id=&quot;preface&quot;&gt;Preface&lt;/h1&gt;
+
+&lt;p&gt;Officially, this is my first post on this blog! So, this is a little exciting. But that’s not why we’re here, right? Let’s get to the real content here. If you’re looking for the quick fix, just shoot down to the &lt;a href=&quot;#the-fix-tldr&quot;&gt;tl;dr section&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;context&quot;&gt;Context&lt;/h1&gt;
+
+&lt;p&gt;As of the time I’m creating this post - I’m what I consider pretty much a beginner to web development. I went to ng-conf](https://www.ng-conf.org) in beautiful Salt Lake City in 2019, but other than that, it’s really been mostly self learning since my job only primarily works with C#.NET and Visual Basic. To get myself familiar with web technologies, I’ve been making a personal website that I’m coding in Angular while also having a development blog in Jekyll on the side (this one).&lt;/p&gt;
+
+&lt;p&gt;Originally, I wanted to have these both be in the same repository, with the main Angular website being hosted at &lt;a href=&quot;shootinginto.space&quot;&gt;shootinginto.space&lt;/a&gt; and the Jekyll blog being hosted in a subdirectory at &lt;a href=&quot;shootinginto.space/blog&quot;&gt;shootinginto.space/blog&lt;/a&gt; (don’t try clicking on that - it doesn’t exist!), but that presented some way more issues and more trouble than it was worth. So, instead, I followed the advice of some comments here and there and ended up making two GitHub repositories - one for the actual website, and one for the Jekyll blog.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, this meant that having the blog being a subdirectory of the domain wasn’t really a possibility (as two sites on Github Pages cannot share the same domain name). So, instead, I went for the subdomain approach, where I would have &lt;a href=&quot;shootinginto.space&quot;&gt;shootinginto.space&lt;/a&gt; and &lt;a href=&quot;blog.shootinginto.space&quot;&gt;blog.shootinginto.space&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;While setting up both repositories, I had some issues getting the domains to wire up correctly even though I had done a bit of extensive research. There wasn’t really much mentions of using apex domains (no “www”) &lt;em&gt;and&lt;/em&gt; subdomains with the same domain. I had tried monkeying around and fiddling with the CNAME and A records to try to get the results I wanted - my apex domain was working just great with &lt;a href=&quot;https://docs.github.com/en/github/working-with-github-pages/about-custom-domains-and-github-pages#using-an-apex-domain-for-your-github-pages-site&quot;&gt;the documentation GitHub provided&lt;/a&gt;. The documentation for &lt;a href=&quot;https://docs.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain&quot;&gt;adding a subdomain&lt;/a&gt; was pretty good too, but even after making these changes, my subdomain still didn’t seem to work as intended. I noticed that setting up the A records for my subdomain exactly like my apex domain worked (with four A records pointing to GitHub Page’s IP addresses), but not the CNAME record.&lt;/p&gt;
+
+&lt;p&gt;I did some more poking into GitHub Pages’ documentation and &lt;a href=&quot;https://docs.github.com/en/github/working-with-github-pages/troubleshooting-custom-domains-and-github-pages#custom-domain-names-that-are-unsupported&quot;&gt;found this&lt;/a&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Make sure your site does not:
+&lt;span class=&quot;p&quot;&gt;
+-&lt;/span&gt; Use more than one apex domain.
+For example, both example.com and anotherexample.com.
+&lt;span class=&quot;p&quot;&gt;
+-&lt;/span&gt; Use more than one www subdomain.
+For example, both www.example.com and www.anotherexample.com.
+&lt;span class=&quot;p&quot;&gt;
+-&lt;/span&gt; Use both an apex domain and custom subdomain.
+For example, both example.com and docs.example.com.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After reading the last bullet point, I was thinking, “Ugh, crap. Is this really not possible?” I was almost to the point where I would just keep the A records pointing at my subdomain and just forget about the CNAME record and just let GitHub annoy me with the yellow error saying that I shouldn’t be using A records for a subdomain. But, I decided to try one last time the following afternoon - I was in the office, and I decided to remove the A records for the subdomain and add back the CNAME record. I got a little bit carried away with my daily tasks, and about maybe half an hour later, I was like, “Wait, I still need to see if it works.” So I navigated to my subdomain… and it &lt;strong&gt;**worked**&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;That was all it took - all I had to do was just wait a little longer.&lt;/p&gt;
+
+&lt;p&gt;So… looks like GitHub’s documentation isn’t exactly correct. An apex domain and custom subdomain &lt;em&gt;are&lt;/em&gt; allowed. You just need to set it up correctly, and most importantly, just be patient.&lt;/p&gt;
+
+&lt;p&gt;For the exact fixes, read the next section.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-fix-tldr&quot;&gt;The Fix (tl;dr)&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a CNAME file in the root directory of your project using your &lt;strong&gt;apex domain&lt;/strong&gt; with &lt;strong&gt;only the apex domain&lt;/strong&gt;. In my case, the CNAME for my apex domain only has &lt;strong&gt;shootinginto.space&lt;/strong&gt; in it. See &lt;a href=&quot;https://github.com/AxelSparkster/shootingintospace.github.io/blob/gh-pages/CNAME&quot;&gt;here&lt;/a&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; To make this easier, GitHub can create this file and automatically commits it for you. Just open your repository, go to Settings -&amp;gt; Github Pages -&amp;gt; Custom Domain, enter your domain in the field and click “Save”.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create a CNAME file in the root directory of your &lt;em&gt;other&lt;/em&gt; project using your &lt;strong&gt;subdomain&lt;/strong&gt; with the &lt;strong&gt;complete subdomain&lt;/strong&gt;. In my case, the CNAME for my blog has &lt;strong&gt;blog.shootinginto.space&lt;/strong&gt; in it. See &lt;a href=&quot;https://github.com/AxelSparkster/spaceblog.github.io/blob/gh-pages/CNAME&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;On your domain name provider’s site, set up your &lt;strong&gt;apex domain&lt;/strong&gt; with the &lt;a href=&quot;https://docs.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain&quot;&gt;IP addresses for Github Pages&lt;/a&gt;. (You can verify that they’re the correct addresses by following the link.)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If you don’t know how to do this, for each of these records, create an A record, HOST value of @, and VALUE value of the IP address. Note this may differ between domain name providers - I personally used Namecheap.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;185.&lt;/span&gt;199.108.153
+&lt;span class=&quot;p&quot;&gt;185.&lt;/span&gt;199.109.153
+&lt;span class=&quot;p&quot;&gt;185.&lt;/span&gt;199.110.153
+&lt;span class=&quot;p&quot;&gt;185.&lt;/span&gt;199.111.153
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Set up your subdomain by adding a CNAME entry with “www” as the host value (yes, just www, not your subdomain prefix) and “&lt;username&gt;.github.io.&quot; with the value (put in your account's username - the end period is important!)&lt;/username&gt;&lt;/li&gt;
+  &lt;li&gt;The most important part - &lt;strong&gt;wait&lt;/strong&gt;. While most A record changes can be instantaneous, the CNAME records (for me, at least) took much longer to propagate.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here’s a screenshot of my records, just as a reference:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/images/records.png&quot; alt=&quot;A screenshot of my A and CNAME records for reference&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you have any questions of comments, feel free to add a comment, and I’ll try to help to the best of my ability.&lt;/p&gt;</content><author><name>Axel Sparkster</name></author><summary type="html">Preface</summary></entry><entry><title type="html">New Test Post</title><link href="http://localhost:4000/test/new-test-post/" rel="alternate" type="text/html" title="New Test Post" /><published>2021-02-20T00:12:00-06:00</published><updated>2021-02-20T00:12:00-06:00</updated><id>http://localhost:4000/test/new-test-post</id><content type="html" xml:base="http://localhost:4000/test/new-test-post/">&lt;p&gt;Nothing too interesting here. Just a test post.&lt;/p&gt;</content><author><name>Axel Sparkster</name></author><category term="test" /><category term="test" /><summary type="html">Nothing too interesting here. Just a test post.</summary></entry></feed>
