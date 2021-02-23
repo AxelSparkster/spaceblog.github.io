@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Adding an Apex Domain and Custom Subdomain on Github Pages - Axel’s Development Blog</title>
-<meta name="description" content="Preface">
+<meta name="description" content="Officially, this is my first post on this blog! So, this is a little exciting.">
 
 
   <meta name="author" content="Axel Sparkster">
@@ -23,10 +23,10 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Axel's Development Blog">
 <meta property="og:title" content="Adding an Apex Domain and Custom Subdomain on Github Pages">
-<meta property="og:url" content="http://localhost:4000/managing-apex-domains-and-subdomains-on-github-pages/">
+<meta property="og:url" content="http://localhost:4000/adding-an-apex-domain-and-custom-subdomain-on-github-pages/">
 
 
-  <meta property="og:description" content="Preface">
+  <meta property="og:description" content="Officially, this is my first post on this blog! So, this is a little exciting.">
 
 
 
@@ -41,7 +41,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/managing-apex-domains-and-subdomains-on-github-pages/">
+<link rel="canonical" href="http://localhost:4000/adding-an-apex-domain-and-custom-subdomain-on-github-pages/">
 
 
 
@@ -277,7 +277,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Adding an Apex Domain and Custom Subdomain on Github Pages">
-    <meta itemprop="description" content="Preface">
+    <meta itemprop="description" content="Officially, this is my first post on this blog! So, this is a little exciting.">
     <meta itemprop="datePublished" content="2021-02-22T13:29:00-06:00">
     
 
@@ -315,18 +315,20 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> Table of Contents</h4></header>
-              <ul class="toc__menu"><li><a href="#preface">Preface</a></li><li><a href="#context">Context</a></li><li><a href="#the-fix-tldr">The Fix (tl;dr)</a></li></ul>
+              <ul class="toc__menu"><li><a href="#context">Context</a></li><li><a href="#how-to-tldr">How To (tl;dr)</a></li></ul>
 
             </nav>
           </aside>
         
-        <h1 id="preface">Preface</h1>
+        <p>Officially, this is my first post on this blog! So, this is a little exciting.</p>
 
-<p>Officially, this is my first post on this blog! So, this is a little exciting. But that’s not why we’re here, right? Let’s get to the real content here. If you’re looking for the quick fix, just shoot down to the <a href="#the-fix-tldr">tl;dr section</a>.</p>
+<p>One of my goals with this blog - like I mentioned in the About page - is to help people. And recently, I came across something I got stuck on… dealing with domain name setups. In particular, having one of my GitHub Pages repos to point towards an apex domain (example.com) and another towards a subdomain of the same domain (blog.example.com).</p>
+
+<p>If you’re looking to get past the nitty gritty backstory and want to know how to set it up, just shoot down to the <a href="#how-to-tldr">tl;dr section</a>.</p>
 
 <h1 id="context">Context</h1>
 
-<p>As of the time I’m creating this post - I’m what I consider pretty much a beginner to web development. I went to ng-conf](https://www.ng-conf.org) in beautiful Salt Lake City in 2019, but other than that, it’s really been mostly self learning since my job only primarily works with C#.NET and Visual Basic. To get myself familiar with web technologies, I’ve been making a personal website that I’m coding in Angular while also having a development blog in Jekyll on the side (this one).</p>
+<p>As of the time I’m creating this post - I’m what I consider pretty much a beginner to web development. I went to <a href="https://www.ng-conf.org">ng-conf</a> in beautiful Salt Lake City in 2019, but other than that, it’s really been mostly self learning since my job only primarily works with C#.NET and Visual Basic. To get myself familiar with web technologies, I’ve been making a personal website that I’m coding in Angular while also having a development blog in Jekyll on the side (this one).</p>
 
 <p>Originally, I wanted to have these both be in the same repository, with the main Angular website being hosted at <a href="shootinginto.space">shootinginto.space</a> and the Jekyll blog being hosted in a subdirectory at <a href="shootinginto.space/blog">shootinginto.space/blog</a> (don’t try clicking on that - it doesn’t exist!), but that presented some way more issues and more trouble than it was worth. So, instead, I followed the advice of some comments here and there and ended up making two GitHub repositories - one for the actual website, and one for the Jekyll blog.</p>
 
@@ -356,7 +358,7 @@ For example, both example.com and docs.example.com.
 
 <p>For the exact fixes, read the next section.</p>
 
-<h1 id="the-fix-tldr">The Fix (tl;dr)</h1>
+<h1 id="how-to-tldr">How To (tl;dr)</h1>
 
 <ul>
   <li>Create a CNAME file in the root directory of your project using your <strong>apex domain</strong> with <strong>only the apex domain</strong>. In my case, the CNAME for my apex domain only has <strong>shootinginto.space</strong> in it. See <a href="https://github.com/AxelSparkster/shootingintospace.github.io/blob/gh-pages/CNAME">here</a>.
@@ -406,25 +408,15 @@ For example, both example.com and docs.example.com.
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Adding+an+Apex+Domain+and+Custom+Subdomain+on+Github+Pages%20http%3A%2F%2Flocalhost%3A4000%2Fmanaging-apex-domains-and-subdomains-on-github-pages%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Adding+an+Apex+Domain+and+Custom+Subdomain+on+Github+Pages%20http%3A%2F%2Flocalhost%3A4000%2Fadding-an-apex-domain-and-custom-subdomain-on-github-pages%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fmanaging-apex-domains-and-subdomains-on-github-pages%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fadding-an-apex-domain-and-custom-subdomain-on-github-pages%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fmanaging-apex-domains-and-subdomains-on-github-pages%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fadding-an-apex-domain-and-custom-subdomain-on-github-pages%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
-  <nav class="pagination">
-    
-      <a href="/test/new-test-post/" class="pagination--pager" title="New Test Post
-">Previous</a>
-    
-    
-      <a href="#" class="pagination--pager disabled">Next</a>
-    
-  </nav>
-
     </div>
 
     
@@ -437,48 +429,9 @@ For example, both example.com and docs.example.com.
       <div class="grid__wrapper">
         
           
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/test/new-test-post/" rel="permalink">New Test Post
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Nothing too interesting here. Just a test post.
-</p>
-  </article>
-</div>
-
-        
+            
       </div>
     </div>
-  
   
 </div>
 

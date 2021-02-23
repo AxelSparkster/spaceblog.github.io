@@ -5,13 +5,15 @@ toc: true
 toc_label: "Table of Contents"
 ---
 
-# Preface
+Officially, this is my first post on this blog! So, this is a little exciting. 
 
-Officially, this is my first post on this blog! So, this is a little exciting. But that's not why we're here, right? Let's get to the real content here. If you're looking for the quick fix, just shoot down to the [tl;dr section](#the-fix-tldr).
+One of my goals with this blog - like I mentioned in the About page - is to help people. And recently, I came across something I got stuck on... dealing with domain name setups. In particular, having one of my GitHub Pages repos to point towards an apex domain (example.com) and another towards a subdomain of the same domain (blog.example.com).
+
+If you're looking to get past the nitty gritty backstory and want to know how to set it up, just shoot down to the [tl;dr section](#how-to-tldr).
 
 # Context
 
-As of the time I'm creating this post - I'm what I consider pretty much a beginner to web development. I went to ng-conf](https://www.ng-conf.org) in beautiful Salt Lake City in 2019, but other than that, it's really been mostly self learning since my job only primarily works with C#.NET and Visual Basic. To get myself familiar with web technologies, I've been making a personal website that I'm coding in Angular while also having a development blog in Jekyll on the side (this one).
+As of the time I'm creating this post - I'm what I consider pretty much a beginner to web development. I went to [ng-conf](https://www.ng-conf.org) in beautiful Salt Lake City in 2019, but other than that, it's really been mostly self learning since my job only primarily works with C#.NET and Visual Basic. To get myself familiar with web technologies, I've been making a personal website that I'm coding in Angular while also having a development blog in Jekyll on the side (this one).
 
 Originally, I wanted to have these both be in the same repository, with the main Angular website being hosted at [shootinginto.space](shootinginto.space) and the Jekyll blog being hosted in a subdirectory at [shootinginto.space/blog](shootinginto.space/blog) (don't try clicking on that - it doesn't exist!), but that presented some way more issues and more trouble than it was worth. So, instead, I followed the advice of some comments here and there and ended up making two GitHub repositories - one for the actual website, and one for the Jekyll blog.
 
@@ -42,7 +44,7 @@ So... looks like GitHub's documentation isn't exactly correct. An apex domain an
 
 For the exact fixes, read the next section.
 
-# The Fix (tl;dr)
+# How To (tl;dr)
 
 - Create a CNAME file in the root directory of your project using your **apex domain** with __only the apex domain__. In my case, the CNAME for my apex domain only has **shootinginto.space** in it. See [here](https://github.com/AxelSparkster/shootingintospace.github.io/blob/gh-pages/CNAME).
     - **NOTE:** To make this easier, GitHub can create this file and automatically commits it for you. Just open your repository, go to Settings -> Github Pages -> Custom Domain, enter your domain in the field and click "Save".
