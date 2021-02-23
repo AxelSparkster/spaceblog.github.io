@@ -3,6 +3,7 @@ title: Adding an Apex Domain and Custom Subdomain on Github Pages
 date: 2021-02-22 13:29 -0600
 toc: true
 toc_label: "Table of Contents"
+comments: true
 ---
 
 Officially, this is my first post on this blog! So, this is a little exciting. 

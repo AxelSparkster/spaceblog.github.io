@@ -32,6 +32,8 @@ paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: America/Chicago
 
+repository: axelsparkster/spaceblog.github.io
+
 include:
   - _pages
 
@@ -107,4 +109,7 @@ tag_archive:
   type: liquid
   path: /tags/
 
-theme: jekyll-theme-cayman
+comments:
+    provider: "disqus"
+    disqus:
+        shortname: "thespaceblog"
