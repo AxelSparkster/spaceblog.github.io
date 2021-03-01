@@ -4,6 +4,8 @@ date: 2021-02-22 13:29 -0600
 toc: true
 toc_label: "Table of Contents"
 comments: true
+categories: Beginner
+tags: domains github-pages jekyll
 ---
 
 Officially, this is my first post on this blog! So, this is a little exciting. 
